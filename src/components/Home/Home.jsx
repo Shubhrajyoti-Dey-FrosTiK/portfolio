@@ -1,11 +1,11 @@
 import React, { useCallback, useState, useEffect, useRef } from "react";
-import Particles from "react-tsparticles";
+// import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import CustomCursor from "custom-cursor-react";
 import "custom-cursor-react/dist/index.css";
-import { TSPARTICLES_OPTIONS } from "../../tsparticles.options";
+// import { TSPARTICLES_OPTIONS } from "../../tsparticles.options";
 // import AnimatedText, { MovingComponent } from "react-animated-text-content";
-import Gradient from "rgt";
+// import Gradient from "rgt";
 import styles from "./Home.module.css";
 import FadeIn from "react-fade-in";
 import Face from "../../assets/face.jpg";
