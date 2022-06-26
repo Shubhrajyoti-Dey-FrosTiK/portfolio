@@ -1,17 +1,14 @@
 import React, { useCallback, useState, useEffect, useRef } from "react";
-// import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
 import CustomCursor from "custom-cursor-react";
 import "custom-cursor-react/dist/index.css";
-// import { TSPARTICLES_OPTIONS } from "../../tsparticles.options";
-// import AnimatedText, { MovingComponent } from "react-animated-text-content";
-// import Gradient from "rgt";
 import styles from "./Home.module.css";
 import FadeIn from "react-fade-in";
 import Face from "../../assets/face.jpg";
 import NET from "vanta/dist/vanta.net.min";
 import * as THREE from "three";
 import { Typewriter, useTypewriter, Cursor } from "react-simple-typewriter";
+import { Parallax, useParallax } from "react-scroll-parallax";
+import { ScrollTo } from "react-scroll-to";
 
 export default function Home(props) {
   const [vantaEffect, setVantaEffect] = useState(0);
@@ -40,19 +37,16 @@ export default function Home(props) {
     // };
   }, [vantaEffect]);
 
-  const particlesInit = async (main) => {
-    console.log(main);
-    await loadFull(main);
-  };
-
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
-
   return (
     <>
       <CustomCursor
-        targets={[".link", "a", ".ProfileButton", ".your-css-selector"]}
+        targets={[
+          ".link",
+          "a",
+          ".ProfileButton",
+          ".your-css-selector",
+          ".bm-burger-button",
+        ]}
         customClass="custom-cursor"
         dimensions={90}
         fill="#FFF"
@@ -115,7 +109,13 @@ export default function Home(props) {
             </h2>
           </div>
           <div className={`${styles.ProfileButton} ProfileButton`}>
-            <a>GO TO PROFILE</a>
+            <ScrollTo>
+              {({ scroll }) => (
+                <a onClick={() => scroll({ y: 900, smooth: true })}>
+                  GO TO PROFILE
+                </a>
+              )}
+            </ScrollTo>
           </div>
         </FadeIn>
       </div>
