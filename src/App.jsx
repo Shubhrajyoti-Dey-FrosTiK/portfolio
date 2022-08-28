@@ -9,8 +9,6 @@ import { ScrollArea, ScrollTo } from "react-scroll-to";
 import Navbar from "./components/Navbar/Navbar";
 
 export default function App(props) {
-  const containerRef = useRef(null);
-
   return (
     <div id="outer-container">
       {/* <Parallax speed="fast"> */}
